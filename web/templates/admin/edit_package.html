@@ -22,12 +22,20 @@
 
     <div class="l-center">
       <?php
+        /*
+        After save the package, back button link is referer to https://dimain/list/package/?package={package_name}
+        i think we dont need this. Back button will alway go to /list/package/ .... 
+        CMIIW ....
         $back = getenv("HTTP_REFERER");
         if (empty($back)) {
           $back = "location.href='/list/package/'";
         } else {
           $back = "location.href='".$back."'";
         }
+       
+       
+        */
+        $back = "location.href='/list/package/'";
       ?>
         <form id="vstobjects" name="v_edit_package" method="post"  class="<?=$v_status?>">
             <input type="hidden" name="token" value="<?=$_SESSION['token']?>" />
